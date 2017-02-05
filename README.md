@@ -1,6 +1,4 @@
-## Welcome to GitHub Pages
 类似京东淘宝排序筛选
-
 调用方法很简单：
 
     - (void)viewDidLoad {
@@ -20,3 +18,4 @@
     {
     NSLog(@"section:%lu------index:%lu",section,index);
     }
+![效果图](http://upload-images.jianshu.io/upload_images/2419382-6543b1a535c1e49f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240）
