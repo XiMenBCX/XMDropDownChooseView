@@ -1,37 +1,21 @@
 ## Welcome to GitHub Pages
+类似京东淘宝排序筛选
 
-You can use the [editor on GitHub](https://github.com/505739041/XMDropDownChooseView/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+调用方法很简单：
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    NSArray *titlesArr = @[@[@"综合排序",@"新品优先",@"评论数从高到低"],
+                           @[@"品牌",@"国内品牌",@"国际品牌"],
+                           @[@"颜色",@"黑色",@"黄色",@"白色",@"蓝色"]];
+    
+    XMDropDownChooseView *chooseView = [[XMDropDownChooseView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 40) dataArr:titlesArr delegate:self];
+    chooseView.titleColor = [UIColor redColor];
+    [self.view addSubview:chooseView];
+    
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/505739041/XMDropDownChooseView/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+-(void)choosedAtSection:(NSInteger)section index:(NSInteger)index
+{
+    NSLog(@"section:%lu------index:%lu",section,index);
+}
